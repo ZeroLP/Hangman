@@ -67,6 +67,7 @@ namespace Hangman.Modules
         {
             if (LetterSanityCheck(GuessLetter) == false)
             {
+                ResetSettings();
                 Console.WriteLine("Congratulations, You have won the game! Press any key to go to the main menu...");
                 Console.ReadKey();
                 Console.Clear();
@@ -111,6 +112,7 @@ namespace Hangman.Modules
                 if(DisplayHangmanStatus() == "Hanged")
                 {
                     DrawHangman();
+                    Console.WriteLine($"The hangword was: {HangWord}");
                     End();
                     return true;
                 }
